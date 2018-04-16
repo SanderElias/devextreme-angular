@@ -44,6 +44,7 @@ import { <#= baseClass #> } from '../core/component';
 import { DxTemplateHost } from '../core/template-host';
 import { DxTemplateModule } from '../core/template';
 import { NestedOptionHost } from '../core/nested-option';
+import { DxIntegrationModule } from '../core/integration';
 import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
 
@@ -207,7 +208,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
   exports: [
     <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
     <#= component.className #>Module<#~#>,
-    DxTemplateModule
+    DxTemplateModule,
+    DxIntegrationModule
   ],
 })
 export class <#= it.className #>Module { }
